@@ -1,24 +1,34 @@
-#include <iostream>
-using namespace std;
-int main()
-{
+# Get number of cents required from an user.
+changes = int(input("number of cents required for the change: "))
 
-int cents;
+#starting form 2 dollars
+num_toonies = changes//200
+print("number of toonies: ", num_toonies)
 
-cout << "Enter number of cents:"; 
+changes = changes % 200 
+num_loonies = changes//100
+print("number of loonies: ", num_loonies)
 
-cin >> cents;
+changes = changes % 100 
+num_quarters = changes//25
+print("number of quarters: ", num_quarters)
 
-int toonies, loonies, quarters, dimes, nickles, pennies;
+changes = changes % 25
+num_dimes = changes//10
+print("number of dimes: ", num_dimes)
 
-toonies=cents/200;
-cents=cents%200;
-loonies=cents/100;
-cents=cents%100;
-quarters=cents/25;
-cents=cents%25;
-dimes=cents/10;
-cents=cents%10;
-nickles=cents/5;
-cents=cents%5;
-pennies=cents;
+changes = changes % 10 
+num_nickels = changes//5
+print("number of nickels: ", num_nickels)
+
+changes = changes % 5
+print("number of pennies: ", changes)
+
+
+
+
+
+
+
+
+
